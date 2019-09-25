@@ -6,10 +6,8 @@
     <body>
       
 <?php
-
-
-    if(isset($_GET["random"])) {
-        $random=$_GET["random"];
+if(isset($_GET["random"])) {
+  $random=$_GET["random"];
     }
     if(isset($_GET["letras"])) {
         $letras=$_GET["letras"];

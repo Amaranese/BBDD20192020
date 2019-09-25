@@ -38,37 +38,30 @@ class ahorcado
         }
         if ($_POST['letras']) {
             $letras = $_POST['letras'];
-
-                    for ($c = 0; $c < $caracPalabra - 1; $c++) {
-                        if ($arraypalabra[$c] == $letras) {
-                            echo $arraypalabra[$c] = $letras;
-
-                        } else if ($_POST['letras'] != $letras) {
-                            $error += 1;
-                            echo $this->imagen();
-                        }
-                    }
+            for ($c = 0; $c < $caracPalabra - 1; $c++) {
+                if ($arraypalabra[$c] == $letras) {
+                    echo $arraypalabra[$c] = $letras;
+                } 
+                else if ($_POST['letras'] != $letras) {
+                    $error += 1;
+                    echo $this->imagen();
+                }
+            }
         }
     }
-
     static function imagen()
     {
-
         $imagen_error = $this->error;
         if ($imagen_error > 6) {
             $this->imagen_error = 6;
         }
-
         return "<img src=\"" . $this->error . ".jpg\" alt=\"Ahorcado\" title=\"Ahorcado\" />";
-
-
     }
 }
 ?>
 <html>
     <head>
         <title>Joc del penjat</title>
-
     </head>
     <body>
         <form action= "" method="post">
