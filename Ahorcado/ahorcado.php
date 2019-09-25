@@ -1,9 +1,6 @@
 <?php
-
-
 class ahorcado
 {
-
     var $random;
     var $imagen_error;
     var $lista_array;
@@ -14,49 +11,31 @@ class ahorcado
     var $intentos = 6;
     var $error = 0;
     var $letras;
-
-
-
-    
-
     static function cargar($lista_array = "palabras.txt")
     {
         if (file_exists($lista_array)) {
             $this->lista_array = "palabras.txt";
-
-
         }
         $this->random();
     }
-
     static function random()
     {
         if (!isset($random)) {
             $random = lista_array[array_rand($lista_array)];
-
         }
         $caracPalabra = strlen(random) - 1; //contamos caracteres de la palabra
         $arraypalabra = str_split(random);
-
         $arraypalabravacia = Array(); //creamos un segundo array vacio
-
         for ($i = 0; $i < $caracPalabra; $i++) { //llenamos array 2 con _
             echo $arraypalabravacia[$i] = "_";
-
-
         }
     }
-
-     function logicaJuego(){
-        
-         $this->random();
-
+    function logicaJuego(){
+        $this->random();
         if(!$_POST['letras']){
             $arrayguion = implode(" ",$arrayguion);
             echo'<div class="palabravacia">'.$arrayguion.'</div>';
-
         }
-
         if ($_POST['letras']) {
             $letras = $_POST['letras'];
 
